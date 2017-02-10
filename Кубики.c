@@ -12,11 +12,11 @@ void main(){
 	srand(time(NULL));
 	char brosok;
 	do{		
-		cout << "Ïîáåæäàåò òîò, ó êîãî ñóììà ïî èòîãàì ÷åòûð¸õ áðîñêîâ áîëüøå!"<<endl;		
+		cout << "ÃÃ®Ã¡Ã¥Ã¦Ã¤Ã Ã¥Ã² Ã²Ã®Ã², Ã³ ÃªÃ®Ã£Ã® Ã±Ã³Ã¬Ã¬Ã  Ã¯Ã® Ã¨Ã²Ã®Ã£Ã Ã¬ Ã·Ã¥Ã²Ã»Ã°Â¸Ãµ Ã¡Ã°Ã®Ã±ÃªÃ®Ã¢ Ã¡Ã®Ã«Ã¼Ã¸Ã¥!"<<endl;		
 		int total_chel = 0;
 		int total_komp = 0;
 		do{
-			cout << "Äëÿ òîãî ÷òîáû óçíàòü êòî õîäèò ïåðâûì, íàæìè 0 äëÿ áðîñêà"<<endl;
+			cout << "Ã„Ã«Ã¿ Ã²Ã®Ã£Ã® Ã·Ã²Ã®Ã¡Ã» Ã³Ã§Ã­Ã Ã²Ã¼ ÃªÃ²Ã® ÃµÃ®Ã¤Ã¨Ã² Ã¯Ã¥Ã°Ã¢Ã»Ã¬, Ã­Ã Ã¦Ã¬Ã¨ 0 Ã¤Ã«Ã¿ Ã¡Ã°Ã®Ã±ÃªÃ "<<endl;
 			cin >> brosok;
 		}
 		while (brosok != '0');
@@ -24,58 +24,58 @@ void main(){
 		int res_chel, res_komp;
 		do{
 			res_chel = res();
-			cout << "Âàø ðåçóëüòàò: " << res_chel << endl;
+			cout << "Ã‚Ã Ã¸ Ã°Ã¥Ã§Ã³Ã«Ã¼Ã²Ã Ã²: " << res_chel << endl;
 			res_komp = res();
-			cout << "\nÐåçóëüòàò êîìïüþòåðà: " << res_komp << endl;
+			cout << "\nÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã² ÃªÃ®Ã¬Ã¯Ã¼Ã¾Ã²Ã¥Ã°Ã : " << res_komp << endl;
 		}
 		while (res_chel == res_komp);
 
 		if (res_chel>res_komp){
-			cout << "\nÂû íà÷èíàåòå ïåðâûì :("<<endl;
+			cout << "\nÃ‚Ã» Ã­Ã Ã·Ã¨Ã­Ã Ã¥Ã²Ã¥ Ã¯Ã¥Ã°Ã¢Ã»Ã¬ :("<<endl;
 			for (int i = 1; i <= 4; i++){
 				do{
-					cout << "Íàæìè 0 äëÿ áðîñêà"<<endl;
+					cout << "ÃÃ Ã¦Ã¬Ã¨ 0 Ã¤Ã«Ã¿ Ã¡Ã°Ã®Ã±ÃªÃ "<<endl;
 					cin >> brosok;
 				} 
 				while (brosok != '0');
-				cout << "Âû:"<<endl;
+				cout << "Ã‚Ã»:"<<endl;
 				total_chel += res();
-				cout << "Êîìïüþòåð:" << endl;
+				cout << "ÃŠÃ®Ã¬Ã¯Ã¼Ã¾Ã²Ã¥Ã°:" << endl;
 				total_komp += res();
-				cout << "Ñëåäóþùèé õîä:" << endl;
+				cout << "Ã‘Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¨Ã© ÃµÃ®Ã¤:" << endl;
 			}
-			cout << "Âàø ðåçóëüòàò (ñóììà çà 4 áðîñêîâ): " << total_chel << endl;
-			cout << "\nÐåçóëüòàò êîìïüþòåðà (ñóììà çà 4 áðîñêîâ): " << total_komp << endl;
+			cout << "Ã‚Ã Ã¸ Ã°Ã¥Ã§Ã³Ã«Ã¼Ã²Ã Ã² (Ã±Ã³Ã¬Ã¬Ã  Ã§Ã  4 Ã¡Ã°Ã®Ã±ÃªÃ®Ã¢): " << total_chel << endl;
+			cout << "\nÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã² ÃªÃ®Ã¬Ã¯Ã¼Ã¾Ã²Ã¥Ã°Ã  (Ã±Ã³Ã¬Ã¬Ã  Ã§Ã  4 Ã¡Ã°Ã®Ã±ÃªÃ®Ã¢): " << total_komp << endl;
 		}
 		else{
-			cout << "\nÊîìïüþòåð íà÷èíàåò ïåðâûì :)"<<endl;
+			cout << "\nÃŠÃ®Ã¬Ã¯Ã¼Ã¾Ã²Ã¥Ã° Ã­Ã Ã·Ã¨Ã­Ã Ã¥Ã² Ã¯Ã¥Ã°Ã¢Ã»Ã¬ :)"<<endl;
 			for (int i = 1; i <= 4; i++){
-				cout << "Êîìïüþòåð:" << endl;
+				cout << "ÃŠÃ®Ã¬Ã¯Ã¼Ã¾Ã²Ã¥Ã°:" << endl;
 				total_komp += res();
 				do{
-					cout << "Íàæìè 0 äëÿ áðîñêà" << endl;
+					cout << "ÃÃ Ã¦Ã¬Ã¨ 0 Ã¤Ã«Ã¿ Ã¡Ã°Ã®Ã±ÃªÃ " << endl;
 					cin >> brosok;
 				}
 				while (brosok != '0');
-				cout << "Âû:" << endl;
+				cout << "Ã‚Ã»:" << endl;
 				total_chel += res();
-				cout << "Ñëåäóþùèé õîä:" << endl;
+				cout << "Ã‘Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¨Ã© ÃµÃ®Ã¤:" << endl;
 			}
-			cout << "Âàø îáùèé ðåçóëüòàò (ñóììà çà 4 áðîñêîâ): " << total_chel << endl;
-			cout << "\nÐåçóëüòàò êîìïüþòåðà(ñóììà 4 áðîñêîâ): " << total_komp << endl;
+			cout << "Ã‚Ã Ã¸ Ã®Ã¡Ã¹Ã¨Ã© Ã°Ã¥Ã§Ã³Ã«Ã¼Ã²Ã Ã² (Ã±Ã³Ã¬Ã¬Ã  Ã§Ã  4 Ã¡Ã°Ã®Ã±ÃªÃ®Ã¢): " << total_chel << endl;
+			cout << "\nÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã² ÃªÃ®Ã¬Ã¯Ã¼Ã¾Ã²Ã¥Ã°Ã (Ã±Ã³Ã¬Ã¬Ã  4 Ã¡Ã°Ã®Ã±ÃªÃ®Ã¢): " << total_komp << endl;
 		}
 		if (total_chel == total_komp){
-			cout << "\n\nÍÈ×Üß!\n\n";
+			cout << "\n\nÃÃˆÃ—ÃœÃŸ!\n\n";
 		}
 		else{
 			if (total_chel>total_komp){
-				cout << "\n\nÂû âûèãðàëè!\n\n";
+				cout << "\n\nÃ‚Ã» Ã¢Ã»Ã¨Ã£Ã°Ã Ã«Ã¨!\n\n";
 			}
 			if (total_chel<total_komp){
-				cout << "\n\nÊîìïüþòåð âûèãðàë!\n\n";
+				cout << "\n\nÃŠÃ®Ã¬Ã¯Ã¼Ã¾Ã²Ã¥Ã° Ã¢Ã»Ã¨Ã£Ã°Ã Ã«!\n\n";
 			}
 		}
-		cout << "\nÅñëè õîòèòå ïðîäîëæèòü, íàæìèòå 0: " << endl;
+		cout << "\nÃ…Ã±Ã«Ã¨ ÃµÃ®Ã²Ã¨Ã²Ã¥ Ã¯Ã°Ã®Ã¤Ã®Ã«Ã¦Ã¨Ã²Ã¼, Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ 0: " << endl;
 		cin >> brosok;
 	}
 	while (brosok == '0');
@@ -146,6 +146,6 @@ int res(){
 	bros(kubik_2);
 	int rezult;
 	rezult = kubik_1 + kubik_2;
-	cout << "Ðåçóëüòàò: " << rezult << endl << endl;
+	cout << "ÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã²: " << rezult << endl << endl;
 	return rezult;
 }
