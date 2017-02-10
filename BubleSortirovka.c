@@ -16,7 +16,7 @@ void main()
 	setlocale(LC_ALL, "RUS");
 	srand(time(0));
 	int array[SIZE];
-
+	int kol_vo=0;
 	for (int i = 0; i < SIZE; i++)
 	{
 		array[i] = rand() % 100;
@@ -32,14 +32,15 @@ void main()
 				int t = array[j + 1];
 				array[j + 1] = array[j];
 				array[j] = t;
-				
+				kol_vo++;
 			}
 		}
 	}
 	for (int i = 0; i < SIZE; i++)
 	{
 		printf("%i ", array[i]);
-
+		
 	}
 	printf("\n");
+	printf("Количество перестановок = %i\n", kol_vo);
 }
