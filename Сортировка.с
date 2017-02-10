@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <locale.h>
+#include <time.h>
+#include <stdlib.h>
+#define mass_size 10
+
+
+
+
+void main()
+{
+	setlocale(LC_ALL, "RUS");
+	int array[mass_size];
+	srand(time(0));
+	for (int i = 0; i < mass_size; i++)
+	{
+		array[i] = rand() % 100;
+		printf("%i ", array[i]);
+	}
+	printf("\n");
+
+	int i, j, tmp;
+
+	for (j = 1; j < mass_size; j++)
+	{
+		tmp = array[j];
+		{
+			for (i = 0; i < mass_size+1; i++)
+			{
+
+				if (array[j] > array[i + 1])
+				{
+					tmp = array[i];
+					array[i] = array[i - 1];
+					array[i - 1] = tmp;
+				}
+			}
+		}
+	}
+	for (int i = 0; i < mass_size; i++)
+	{
+		
+		printf("%i ", array[i]);
+	}
+	printf("\n");
+}
