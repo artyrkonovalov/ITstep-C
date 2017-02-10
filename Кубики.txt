@@ -1,0 +1,151 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+void bros(int kubik);
+int res();
+
+void main(){
+	setlocale(LC_ALL, "Russian");
+	srand(time(NULL));
+	char brosok;
+	do{		
+		cout << "Побеждает тот, у кого сумма по итогам четырёх бросков больше!"<<endl;		
+		int total_chel = 0;
+		int total_komp = 0;
+		do{
+			cout << "Для того чтобы узнать кто ходит первым, нажми 0 для броска"<<endl;
+			cin >> brosok;
+		}
+		while (brosok != '0');
+
+		int res_chel, res_komp;
+		do{
+			res_chel = res();
+			cout << "Ваш результат: " << res_chel << endl;
+			res_komp = res();
+			cout << "\nРезультат компьютера: " << res_komp << endl;
+		}
+		while (res_chel == res_komp);
+
+		if (res_chel>res_komp){
+			cout << "\nВы начинаете первым :("<<endl;
+			for (int i = 1; i <= 4; i++){
+				do{
+					cout << "Нажми 0 для броска"<<endl;
+					cin >> brosok;
+				} 
+				while (brosok != '0');
+				cout << "Вы:"<<endl;
+				total_chel += res();
+				cout << "Компьютер:" << endl;
+				total_komp += res();
+				cout << "Следующий ход:" << endl;
+			}
+			cout << "Ваш результат (сумма за 4 бросков): " << total_chel << endl;
+			cout << "\nРезультат компьютера (сумма за 4 бросков): " << total_komp << endl;
+		}
+		else{
+			cout << "\nКомпьютер начинает первым :)"<<endl;
+			for (int i = 1; i <= 4; i++){
+				cout << "Компьютер:" << endl;
+				total_komp += res();
+				do{
+					cout << "Нажми 0 для броска" << endl;
+					cin >> brosok;
+				}
+				while (brosok != '0');
+				cout << "Вы:" << endl;
+				total_chel += res();
+				cout << "Следующий ход:" << endl;
+			}
+			cout << "Ваш общий результат (сумма за 4 бросков): " << total_chel << endl;
+			cout << "\nРезультат компьютера(сумма 4 бросков): " << total_komp << endl;
+		}
+		if (total_chel == total_komp){
+			cout << "\n\nНИЧЬЯ!\n\n";
+		}
+		else{
+			if (total_chel>total_komp){
+				cout << "\n\nВы выиграли!\n\n";
+			}
+			if (total_chel<total_komp){
+				cout << "\n\nКомпьютер выиграл!\n\n";
+			}
+		}
+		cout << "\nЕсли хотите продолжить, нажмите 0: " << endl;
+		cin >> brosok;
+	}
+	while (brosok == '0');
+}
+
+void bros(int kubik){
+	switch (kubik){
+	case 1:
+		cout << "***********\n";
+		cout << "*         *\n";
+		cout << "*         *\n";
+		cout << "*    *    *\n";
+		cout << "*         *\n";
+		cout << "*         *\n";
+		cout << "***********\n";
+		break;
+	case 2:
+		cout << "***********\n";
+		cout << "*         *\n";
+		cout << "*    *    *\n";
+		cout << "*         *\n";
+		cout << "*    *    *\n";
+		cout << "*         *\n";
+		cout << "***********\n";
+		break;
+	case 3:
+		cout << "***********\n";
+		cout << "*         *\n";
+		cout << "*  *      *\n";
+		cout << "*    *    *\n";
+		cout << "*      *  *\n";
+		cout << "*         *\n";
+		cout << "***********\n";
+		break;
+	case 4:
+		cout << "***********\n";
+		cout << "*         *\n";
+		cout << "*  *   *  *\n";
+		cout << "*         *\n";
+		cout << "*  *   *  *\n";
+		cout << "*         *\n";
+		cout << "***********\n";
+		break;
+	case 5:
+		cout << "***********\n";
+		cout << "*         *\n";
+		cout << "*  *   *  *\n";
+		cout << "*    *    *\n";
+		cout << "*  *   *  *\n";
+		cout << "*         *\n";
+		cout << "***********\n";
+		break;
+	case 6:
+		cout << "***********\n";
+		cout << "*         *\n";
+		cout << "*  *   *  *\n";
+		cout << "*  *   *  *\n";
+		cout << "*  *   *  *\n";
+		cout << "*         *\n";
+		cout << "***********\n";
+		break;
+	}
+}
+int res(){
+	int kubik_1 = rand() % 6 + 1;
+	bros(kubik_1);
+	int kubik_2 = rand() % 6 + 1;
+	bros(kubik_2);
+	int rezult;
+	rezult = kubik_1 + kubik_2;
+	cout << "Результат: " << rezult << endl << endl;
+	return rezult;
+}
